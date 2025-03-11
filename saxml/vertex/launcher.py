@@ -31,6 +31,7 @@ from saxml.vertex import http_prediction_server
 from saxml.vertex import sax_model_server
 import tornado.ioloop
 import tornado.web
+from security import safe_command
 
 
 _PORT = flags.DEFINE_integer(
@@ -267,7 +268,7 @@ def configure_admin_server():
   if _is_primary():
     logging.info("Configuring SAX admin server on primary node")
     admin_config_cmd_list = get_admin_config_cmd_list()
-    admin_config_process = subprocess.Popen(admin_config_cmd_list)
+    admin_config_process = safe_command.run(subprocess.Popen, admin_config_cmd_list)
     logging.info(
         "Configuring SAX admin server pid=%d",
         admin_config_process.pid)
