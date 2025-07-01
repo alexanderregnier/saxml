@@ -21,13 +21,13 @@ import argparse
 import asyncio
 import concurrent
 import json
-import random
 import time
 from typing import Any, AsyncGenerator, List, Tuple
 import numpy as np
 import sax
 import sentencepiece
 from tqdm.asyncio import tqdm
+import secrets
 
 # (prompt len, output len, latency)
 REQUEST_LATENCY: List[Tuple[int, int, float]] = []
@@ -82,7 +82,7 @@ def sample_requests(
     filtered_dataset.append((prompt, prompt_len, output_len))
 
   # Sample the requests.
-  sampled_requests = random.sample(filtered_dataset, num_requests)
+  sampled_requests = secrets.SystemRandom().sample(filtered_dataset, num_requests)
   return sampled_requests
 
 
@@ -164,7 +164,7 @@ async def benchmark(
 
 def main(args: argparse.Namespace):
   print(args)
-  random.seed(args.seed)
+  secrets.SystemRandom().seed(args.seed)
   np.random.seed(args.seed)
 
   tokenizer = sentencepiece.SentencePieceProcessor(model_file=args.tokenizer)
