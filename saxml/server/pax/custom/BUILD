@@ -2,6 +2,8 @@ load("//saxml:saxml.bzl", "py_strict_test", "pytype_strict_library")
 
 licenses(["notice"])
 
+package(default_applicable_licenses = ["//saxml:license"])
+
 pytype_strict_library(
     name = "servable_custom_model",
     srcs = ["servable_custom_model.py"],

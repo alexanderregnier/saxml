@@ -4,6 +4,7 @@ load("//saxml/server:build_defs.bzl", "create_server_binary")
 licenses(["notice"])
 
 package(
+    # unused internal package attribute
     default_visibility = ["//saxml:internal"],
 )
 

@@ -20,6 +20,7 @@ load(
 )
 
 package(
+    # unused internal package attribute
     default_visibility = ["//saxml:internal"],
 )
 

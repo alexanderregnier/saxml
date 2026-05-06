@@ -7,6 +7,8 @@ load(
     "pytype_strict_library",
 )
 
+package(default_applicable_licenses = ["//saxml:license"])
+
 pytype_strict_binary(
     name = "launcher",
     srcs = ["launcher.py"],

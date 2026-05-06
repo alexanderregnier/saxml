@@ -19,6 +19,7 @@ load("//saxml:saxml.bzl", "go_library", "go_test", "pytype_strict_library")
 load("//third_party/bazel_rules/rules_cc/cc:cc_library.bzl", "cc_library")
 
 package(
+    # unused internal package attribute
     default_visibility = ["//saxml:internal"],
 )
 

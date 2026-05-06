@@ -2,6 +2,8 @@
 
 load("//saxml:saxml.bzl", "pybind_extension")
 
+package(default_applicable_licenses = ["//saxml:license"])
+
 pybind_extension(
     name = "testutil",
     testonly = True,

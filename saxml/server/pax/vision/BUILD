@@ -5,6 +5,7 @@ load("//saxml:saxml.bzl", "pytype_strict_library")
 licenses(["notice"])
 
 package(
+    # unused internal package attribute
     default_visibility = [
         "//saxml:internal",
     ],
