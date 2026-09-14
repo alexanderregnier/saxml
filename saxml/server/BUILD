@@ -22,7 +22,10 @@ licenses(["notice"])
 # Please also update the copybara file to exclude the new directory.
 package_group(
     name = "friends",
-    packages = ["//learning/deepmind/research/montreal/gdm_academy/code_factuality/..."],
+    packages = [
+        "//learning/deepmind/research/gg/projects/sima_wam/...",
+        "//learning/deepmind/research/montreal/gdm_academy/code_factuality/...",
+    ],
 )
 
 bzl_library(
