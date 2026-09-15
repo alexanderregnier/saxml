@@ -54,10 +54,10 @@ def for_transformer(
     quantize_embedding_softmax: bool = False,
     transposed_embedding_softmax: bool = False,
     quantize_ngrammer_embedding: bool = False,
-    dtype: jnp.dtype = jnp.int8,
+    dtype: jnp.dtype = jnp.int8,  # pyrefly: ignore[bad-function-definition]
     block_size: int = 0,
     use_int4_packed_weights: bool = True,
-    int4_packed_weights_container_dtype: jnp.dtype = jnp.int32,
+    int4_packed_weights_container_dtype: jnp.dtype = jnp.int32,  # pyrefly: ignore[bad-function-definition]
     weight_quant_only: bool = True,
     quantize_self_attention: bool = True,
     quantize_cross_attention: bool = True,
